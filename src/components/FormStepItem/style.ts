@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+export const Container = styled.div<{color : string, colorCircle: string}>`
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -32,7 +32,7 @@ export const Container = styled.div`
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: #691497;
+        background-color: ${props => props.color};
         border-radius: 80px;;
         padding: 3px;
         margin-right: 35px;
@@ -45,7 +45,7 @@ export const Container = styled.div`
     .point {
         width: 12px;
         height: 12px;
-        background-color: #211132;
+        background-color: ${props => props.colorCircle};
         border-radius: 10px;
         border: 1px solid #444;
     }
