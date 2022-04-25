@@ -28,6 +28,7 @@ export const Step2 = () => {
             type: FormActions.setLevel,
             payload: Number(e.target.value),
         })
+        e.target.checked = true
     }
 
     useEffect(()=>{
@@ -40,7 +41,7 @@ export const Step2 = () => {
             })
         }
     }, [])
-
+ 
     return(
         <C.Container>
             <C.FormStep>

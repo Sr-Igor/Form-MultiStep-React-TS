@@ -11,7 +11,6 @@ type Props = {
 }
 
 export const StepFormItem = ({img, text, subText, colorStep}: Props) => {
-
     const {state, dispatch} = useForm()
     const [color, setColor] = useState("")
     const [colorCirlce, setColorCircle] = useState("")
@@ -27,6 +26,20 @@ export const StepFormItem = ({img, text, subText, colorStep}: Props) => {
         }
     },[state])
 
+    const handleClick = () => {
+        switch(colorStep){
+            case 1: 
+                navigate("/")
+                break;
+            case 2: 
+                navigate("/step2")
+                break;
+            case 3: 
+                navigate("/step3")
+                break;
+        }
+    }
+
     return(
         <C.Container color={color} colorCircle={colorCirlce}>
             <div className='left'>
@@ -34,7 +47,7 @@ export const StepFormItem = ({img, text, subText, colorStep}: Props) => {
                 <span className='subtitle'>{subText}</span>
             </div>
             <div className='right'>
-                <div className='bg-right'>
+                <div className='bg-right' onClick={handleClick}>
                     <img src={img} alt="photoForm" />   
                 </div>
                 <div className='point'></div>

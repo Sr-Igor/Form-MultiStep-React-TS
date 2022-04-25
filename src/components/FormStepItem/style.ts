@@ -36,6 +36,11 @@ export const Container = styled.div<{color : string, colorCircle: string}>`
         border-radius: 80px;;
         padding: 3px;
         margin-right: 35px;
+        cursor: pointer;
+
+        &:hover {
+            opacity: 0.7
+        }
     }
 
     img {

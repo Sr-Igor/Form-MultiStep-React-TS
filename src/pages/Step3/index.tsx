@@ -13,9 +13,11 @@ export const Step3 = () => {
     }
 
     useEffect(()=>{
-        if(state.name === ''){
+        if(state.name === '') {
             navigate("/")
-        }else{
+        }else if(state.level === 0){
+            navigate("/step2")
+        }else {
             dispatch({
                 type: FormActions.setCurrentStep,
                 payload: 3,
