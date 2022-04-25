@@ -8,22 +8,6 @@ export const Container = styled.div`
 
 export const FormStep = styled.form`
 
-    label {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border: 1px solid #555;
-        min-height: 50px;
-        margin-bottom: 20px;
-        border-radius: 15px;
-        background-color: transparent;
-        cursor: pointer;
-
-        &:hover {
-            background-color: #49926b;
-        }
-    };
-
     .buttonsArea { 
         margin-top: 40px;
     }

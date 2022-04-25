@@ -1,6 +1,7 @@
 import { ChangeEvent, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { FormActions, useForm } from '../../contexts/Contexts'
+import { Label } from '../../components/SelectOption'
 import * as C from './style'
 
 
@@ -23,14 +24,6 @@ export const Step2 = () => {
         navigate('/')
     }
 
-    const handleClick = (e: any) => {
-        dispatch({
-            type: FormActions.setLevel,
-            payload: Number(e.target.value),
-        })
-        e.target.checked = true
-    }
-
     useEffect(()=>{
         if(state.name === ''){
             navigate("/")
@@ -44,25 +37,23 @@ export const Step2 = () => {
  
     return(
         <C.Container>
+            <Label 
+                emoji={"😬"}
+                title={"Sou Iniciante"}
+                subtitle={"Comecei a programar há menos de 2 anos"}
+                value={1}
+                vr={state.level == 1}
+                
+            />
+
+            <Label 
+                emoji={"🤑"}
+                title={"Sou Experiente"}
+                subtitle={"Comecei a programar há mais de 2 anos"}
+                value={2}
+                vr={state.level == 2}
+            />
             <C.FormStep>
-                <label htmlFor='NoXp'>  
-                    <input type="radio" name='level' id='NoXp' value={1} onClick={handleClick}/>
-                    <div className='emoji'>😬</div>
-                    <div className='titles'>
-                        <span className='titleLabel'>Sou Iniciante</span>
-                        <span className='subtitleLabel'>Comecei a programar há menos de 2 anos</span>
-                    </div>
-                </label>
-                
-                
-                <label htmlFor='Xp'>  
-                <input type="radio" name='level' id='Xp' value={2} onClick={handleClick}/>
-                    <div className='emoji'>🤑</div>
-                    <div className='titles'>
-                        <span className='titleLabel'>Sou Experiente</span>
-                        <span className='subtitleLabel'>Comecei a programar há mais de 2 anos</span>
-                    </div>
-                </label>
                 
                 <div className='buttonsArea'>
                     <button className='back' onClick={handlePageBack}>Voltar</button>
